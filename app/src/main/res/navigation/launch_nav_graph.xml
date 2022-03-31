@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/launch_nav_graph"
+    app:startDestination="@+id/placeholder">
+    <fragment
+        android:id="@+id/placeholder"
+        android:name="androidx.fragment.app.Fragment"
+        android:label="placeholder"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_launch"
+        android:name="com.xtool.polaris.ui.launch.LaunchFragment"
+        android:label="launchFragment"
+        tools:layout="@layout/fragment_launch" />
+    <fragment
+        android:id="@+id/navigation_privacy"
+        android:name="com.xtool.polaris.ui.launch.PrivacyFragment"
+        android:label="launchFragment"
+        tools:layout="@layout/fragment_privacy" />
+    <activity
+        android:id="@+id/main_activity"
+        android:name="com.xtool.polaris.MainActivity"
+        android:label="main"
+        tools:layout="@layout/activity_main" />
+</navigation>
