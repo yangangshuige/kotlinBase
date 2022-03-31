@@ -16,7 +16,6 @@ buildscript {
             'rxjava3'          : "3.0.0",
             'logging'          : "4.9.2",
             'mmkv'             : "1.2.11",
-            //组件的初始化逻辑和初始化顺序
             'startup'          : "1.1.1"
     ]
     repositories {
@@ -39,6 +38,13 @@ allprojects {
         jcenter()
 //        maven { url 'https://jitpack.io' }
     }
+}
+configurations.all {
+
+    resolutionStrategy {
+        force "com.google.android.material:material:$lib_versions.material"
+    }
+
 }
 
 task clean(type: Delete) {

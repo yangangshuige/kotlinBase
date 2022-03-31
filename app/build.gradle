@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.xtool.polaris"
-        minSdkVersion lib_versions.targetSdkVersion
+        minSdkVersion lib_versions.minSdkVersion
         targetSdkVersion lib_versions.targetSdkVersion
         versionCode lib_versions.versionCode
         versionName lib_versions.versionName
@@ -40,7 +40,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$lib_versions.core_ktx"
     implementation "androidx.constraintlayout:constraintlayout:$lib_versions.constraintlayout"
-    implementation "com.google.android.material:$lib_versions.material"
+    implementation "com.google.android.material:material:$lib_versions.material"
     implementation "androidx.navigation:navigation-fragment-ktx:$lib_versions.navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$lib_versions.navigation"
 
