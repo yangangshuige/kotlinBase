@@ -25,7 +25,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewBinding = FragmentMainBinding.bind(view)
-        viewBinding.bottomNavigation.setOnNavigationItemSelectedListener { menuItem ->
+        viewBinding.bottomNavigation.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_home -> {
                     childFragmentManager.beginTransaction()

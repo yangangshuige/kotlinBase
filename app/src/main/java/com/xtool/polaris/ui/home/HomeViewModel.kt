@@ -6,7 +6,6 @@ import com.xtool.polaris.network.NetworkUtils.callRequest
 import com.xtool.polaris.network.NetworkUtils.handlerResponse
 import com.xtool.polaris.network.ResourceState
 import com.xtool.polaris.network.RetrofitFactory
-import com.xtool.polaris.network.fold
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -25,11 +24,12 @@ class HomeViewModel : ViewModel() {
             val response = withContext(dispatchers) {
                 callRequest { handlerResponse(RetrofitFactory.instance.service.getBannerJson()) }
             }
-            response.fold(onSuccess = {
-                bannerState.postValue(ResourceState.success(it))
-            }, onFailure = {
-                bannerState.postValue(ResourceState.error(null,-1,""))
-            })
+            bannerState.postValue(response)
+//            response.fold(onSuccess = {
+//                bannerState.postValue(ResourceState.success(it))
+//            }, onFailure = {
+//                bannerState.postValue(ResourceState.error(null,-1,""))
+//            })
         }
     }
 }
